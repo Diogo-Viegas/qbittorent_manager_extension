@@ -56,7 +56,7 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
 // Escuta também o menu do botão direito
 chrome.contextMenus.onClicked.addListener((info) => {
   if (!info.linkUrl) return;
-  const cat = info.menuItemId === "qbit-filmes" ? "Filmes" : info.menuItemId === "qbit-series" ? "Series" : "";
+  const cat = info.menuItemId === "qbit-filmes" ? "FILMES" : info.menuItemId === "qbit-series" ? "Series" : "";
   addTorrent(info.linkUrl, cat)
     .then(() => notify("Download Iniciado!", `Categoria: ${cat || "Geral"}`))
     .catch((err) => notify("Erro no qBittorrent", err.message));
