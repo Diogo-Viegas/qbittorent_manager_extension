@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { width: 340px; font-family: system-ui, sans-serif; background: #181a1b; color: #e8e6e3; margin: 0; padding: 12px; }
+    h3 { margin: 0 0 10px 0; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+    .btn-small { background: #2c3135; color: #fff; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 11px; }
+    .btn-small:hover { background: #3b4248; }
+    #settings { display: none; background: #222526; padding: 10px; border-radius: 6px; margin-bottom: 10px; }
+    input { width: 100%; box-sizing: border-box; margin-bottom: 8px; padding: 6px; background: #121415; border: 1px solid #3a3f42; color: #fff; border-radius: 4px; }
+    .torrent { background: #222526; padding: 8px; border-radius: 6px; margin-bottom: 8px; font-size: 12px; }
+    .name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 4px; }
+    .bar-bg { background: #121415; height: 6px; border-radius: 3px; overflow: hidden; margin: 5px 0; }
+    .bar-fill { background: #3b82f6; height: 100%; transition: width 0.3s; }
+    .meta { display: flex; justify-content: space-between; color: #9ca3af; font-size: 11px; align-items: center; }
+    .actions button { background: none; border: none; color: #e8e6e3; cursor: pointer; font-size: 13px; padding: 0 4px; }
+    .actions button:hover { color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <h3>
+    <span>⚡ qBittorrent NAS</span>
+    <button id="toggleSettings" class="btn-small">⚙️ Config</button>
+  </h3>
+
+  <div id="settings">
+    <input type="text" id="url" placeholder="http://192.168.1.38:8082">
+    <input type="text" id="username" placeholder="Utilizador (ex: admin)">
+    <input type="password" id="password" placeholder="Palavra-passe">
+    <button id="saveSettings" class="btn-small" style="width:100%; background:#2563eb;">Guardar Ligação</button>
+  </div>
+
+  <div id="list">A carregar torrents...</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
